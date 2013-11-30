@@ -236,9 +236,23 @@ class CoinAddress {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static function create_key_pair() {
 
-        $privBin = '';
-        for ($i = 0; $i < 32; $i++) { $privBin .= chr(mt_rand(0, $i ? 0xff : 0xfe)); }
-        $point = Point::mul(bcmath_Utils::bin2bc("\x00" . $privBin), self::$secp256k1_G);
+        // TODO for high-risk production use, make sure your random sources are safe.
+        // See http://phpsecurity.readthedocs.org/en/latest/Insufficient-Entropy-For-Random-Values.html for some advice.
+        do {
+            $privBin = openssl_random_pseudo_bytes(32, $crypto_strong);
+            if (!$crypto_strong) {
+                throw new RuntimeException('crypto-strong RNG not available!');
+            }
+            $secretMultiplier = bcmath_Utils::bin2bc("\x00" . $privBin);
+            if (USE_EXT == 'GMP') {
+                $lessThanOrderG = gmp_cmp(self::$secp256k1_G->getOrder(), $secretMultiplier) > 0;
+            } else if (USE_EXT == 'BCMATH') {
+                $lessThanOrderG = bccomp(self::$secp256k1_G->getOrder(), $secretMultiplier) > 0;
+            } else {
+                throw new RuntimeException('USE_EXT not configured correctly');
+            }
+        } while (!$lessThanOrderG);
+        $point = Point::mul($secretMultiplier, self::$secp256k1_G);
 
         $pubBinStr = "\x04" . str_pad(bcmath_Utils::bc2bin($point->getX()), 32, "\x00", STR_PAD_LEFT)
             . str_pad(bcmath_Utils::bc2bin($point->getY()), 32, "\x00", STR_PAD_LEFT);
