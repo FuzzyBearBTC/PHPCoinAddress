@@ -5,12 +5,12 @@ Bitcoin, Namecoin, Litecoin, PPCoin and many other cryptocoins.
 
 PHPCoinAddress is intended to be easy to integrate into other PHP projects. 
 
-Version 0.2.0.pre
+Version 0.2.1.pre
 
-* Info: https://github.com/zamgo/PHPCoinAddress
-* Download ZIP: https://github.com/zamgo/PHPCoinAddress/archive/master.zip
-* Git clone: https://github.com/zamgo/PHPCoinAddress.git
-* Raw TXT: https://raw.github.com/zamgo/PHPCoinAddress/master/PHPCoinAddress.php
+* Info: https://github.com/FuzzyBearBTC/PHPCoinAddress
+* Download ZIP: https://github.com/FuzzyBearBTC/PHPCoinAddress/archive/master.zip
+* Git clone: https://github.com/FuzzyBearBTC/PHPCoinAddress.git
+* Raw TXT: https://github.com/FuzzyBearBTC/PHPCoinAddress/master/PHPCoinAddress.php
 * Bitcointalk thread: https://bitcointalk.org/index.php?topic=200042.0
 
 Example Usage:
@@ -25,7 +25,7 @@ print 'public (Hex)   : ' . $coin['public_hex'] . "\n";
 print 'private (WIF)  : ' . $coin['private'] . "\n";
 print 'private (Hex)  : ' . $coin['private_hex'] . "\n"; 
 </pre>
-* See [test.php](https://github.com/zamgo/PHPCoinAddress/blob/master/test.php) for more extensive tests.
+* See [test.php](https://github.com/FuzzyBearBTC/PHPCoinAddress/blob/master/test.php) for more extensive tests.
 
 Notes:
 ==============
@@ -67,7 +67,7 @@ MINCOIN         50  0x32  M     178  0xB2   6   K,    -     https://github.com/S
 NAMECOIN        52  0x34  M,N   180  0xB4   7   K,    -     https://github.com/namecoin/namecoin
 NOVACOIN         8  0x08  4     136  0x88   5   K,    -     https://github.com/CryptoManiac/novacoin
 ONECOIN        115  0x73  o     243  0xF3   9   K,    -     https://github.com/cre8r/onecoin
-PPCOIN          55  0x37  P     183  0xB7   7   K,    OK    https://github.com/ppcoin/ppcoin
+PEERCOIN        55  0x37  P     183  0xB7   7   K,    OK    https://github.com/ppcoin/ppcoin
 ROYALCOIN        -     -  -       -     -   -   -     -     http://sourceforge.net/projects/royalcoin/
 SMALLCHANGE     62  0x3E  S     190  0xBE   7   K,    -     https://github.com/bfroemel/smallchange
 TERRACOIN        0  0x00  1     128  0x80   5   K,L   -     https://github.com/terracoin/terracoin

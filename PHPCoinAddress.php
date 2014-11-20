@@ -2,7 +2,7 @@
 /* ****************************************************************************
 
 PHPCoinAddress is a PHP object that creates public/private address key pairs for:
-Bitcoin, Namecoin, Litecoin, PPCoin and many other cryptocoins.
+Bitcoin, Namecoin, Litecoin, Peercoin and many other cryptocoins.
 
 Version 0.2.0.pre
 
@@ -153,7 +153,8 @@ class CoinAddress {
     public static function namecoin() { self::$prefix_public = '0x34'; self::$prefix_private = '0xB4'; return self::get_address(); }
     public static function novacoin() { self::$prefix_public = '0x08'; self::$prefix_private = '0x88'; return self::get_address(); }
     public static function onecoin() {  self::$prefix_public = '0x73'; self::$prefix_private = '0xF3'; return self::get_address(); }
-    public static function ppcoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
+    public static function peercoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
+	//public static function primecoin() {   self::$prefix_public = '0x37'; self::$prefix_private = '0xB7'; return self::get_address(); }
     //public static function royalcoin() { self::$prefix_public = '0x??'; self::$prefix_private = '0x??'; return self::get_address(); }
     public static function smallchange() { self::$prefix_public = '0x3E';  self::$prefix_private = '0xBE'; return self::get_address(); }
     public static function terracoin() { return self::bitcoin(); }
@@ -177,7 +178,7 @@ class CoinAddress {
     public static function namecoin_testnet() { return self::bitcoin_testnet(); } // ??
     public static function novacoin_testnet() { return self::bitcoin_testnet(); }
     public static function onecoin_testnet() { return self::bitcoin_testnet(); }
-    public static function ppcoin_testnet() { return self::bitcoin_testnet(); }
+    public static function peercoin_testnet() { return self::bitcoin_testnet(); }
     //public static function royalcoin_testnet(){ return self::bitcoin_testnet(); }
     public static function smallchange_testnet(){ return self::bitcoin_testnet(); }	
     public static function terracoin_testnet(){ return self::bitcoin_testnet(); }

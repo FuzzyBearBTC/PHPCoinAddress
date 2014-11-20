@@ -31,11 +31,11 @@ function web_form() {
 
 <input type="submit" value="Create Public/Private Keys" />
 
+<input type="checkbox" name="coin[]" value="peercoin" /> Peercoin
 <input type="checkbox" name="coin[]" value="bitcoin" /> Bitcoin
 <input type="checkbox" name="coin[]" value="bitcoin_testnet" /> Bitcoin Testnet
 <input type="checkbox" name="coin[]" value="litecoin" /> Litecoin
 <input type="checkbox" name="coin[]" value="namecoin" /> Namecoin
-<input type="checkbox" name="coin[]" value="ppcoin" /> PPCoin
 
 <input type="checkbox" name="coin[]" value="bbqcoin" /> BBQcoin
 <input type="checkbox" name="coin[]" value="bitbar" /> Bitbar

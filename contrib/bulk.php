@@ -9,7 +9,7 @@ require_once $lib;
 CoinAddress::set_debug(false);
 CoinAddress::set_reuse_keys(false);
 
-$coin_type = 'bitcoin';
+$coin_type = 'peercoin';
 
 $number = 25;
 

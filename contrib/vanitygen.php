@@ -9,9 +9,9 @@ require_once $lib;
 CoinAddress::set_debug(false);
 CoinAddress::set_reuse_keys(false);
 
-$coin_type = 'bitcoin';
+$coin_type = 'peercoin';
 
-$pattern = '/^1x/';
+$pattern = '/^Px/';
 
 $stop = false;
 $count = 0;
